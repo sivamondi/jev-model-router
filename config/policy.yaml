@@ -1,0 +1,8 @@
+# Routing policy. Jev returns probabilities; these thresholds turn them into decisions.
+policy:
+  vision_threshold: 0.5        # needs_vision at or above this requires a vision model
+  coding_threshold: 0.5        # needs_coding at or above this requires good coding (strong for moderate or hard tasks)
+  review_threshold: 0.7        # needs_human_review at or above this flags the output for review
+  review_high_sensitivity: true
+  realtime_max_s: 1.0          # max typical latency for realtime requests
+  interactive_max_s: 3.0       # max typical latency for interactive requests

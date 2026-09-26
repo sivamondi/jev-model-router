@@ -1,0 +1,79 @@
+# Model catalog. Names and prices are placeholders: replace them with the
+# models you actually use and your contract rates.
+#
+# Prices are dollars per million tokens. context_k is thousands of tokens.
+# coding:          none | basic | good | strong
+# max_reasoning:   trivial | simple | moderate | hard
+# max_sensitivity: none | low | medium | high   (highest data sensitivity this model is approved for)
+
+models:
+  - name: small-fast
+    input_price: 0.25
+    output_price: 1.25
+    context_k: 128
+    vision: false
+    coding: basic
+    max_reasoning: simple
+    p50_latency_s: 0.4
+    max_sensitivity: low
+
+  - name: vision-lite
+    input_price: 0.50
+    output_price: 2.00
+    context_k: 128
+    vision: true
+    coding: basic
+    max_reasoning: simple
+    p50_latency_s: 0.6
+    max_sensitivity: low
+
+  - name: private-hosted
+    input_price: 0.80
+    output_price: 0.80
+    context_k: 128
+    vision: false
+    coding: good
+    max_reasoning: moderate
+    p50_latency_s: 1.8
+    max_sensitivity: high
+    note: Self-hosted open-weights model. Data stays inside your network.
+
+  - name: code-mid
+    input_price: 2.00
+    output_price: 8.00
+    context_k: 256
+    vision: false
+    coding: strong
+    max_reasoning: moderate
+    p50_latency_s: 1.4
+    max_sensitivity: low
+
+  - name: balanced
+    input_price: 3.00
+    output_price: 15.00
+    context_k: 200
+    vision: true
+    coding: good
+    max_reasoning: moderate
+    p50_latency_s: 1.2
+    max_sensitivity: medium
+
+  - name: long-context
+    input_price: 5.00
+    output_price: 25.00
+    context_k: 1000
+    vision: true
+    coding: good
+    max_reasoning: hard
+    p50_latency_s: 4.5
+    max_sensitivity: medium
+
+  - name: frontier
+    input_price: 15.00
+    output_price: 75.00
+    context_k: 200
+    vision: true
+    coding: strong
+    max_reasoning: hard
+    p50_latency_s: 3.5
+    max_sensitivity: medium
